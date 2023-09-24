@@ -1,47 +1,11 @@
-import swal from 'sweetalert';
-const PhoneCard = ({phone}) => {
+
+
+const FavoriteCard = ({phone}) => {
 
     const{id, image, phone_name, price, rating}= phone || {}
-
-
-    const handelAddMore = ()=>{
-
-      const addFavoritesArray = [];
-
-      
-        const favoritesItems = JSON.parse(localStorage.getItem('favorites'))
-
-        if(!favoritesItems){
-          addFavoritesArray.push(phone)
-          localStorage.setItem('favorites',JSON.stringify(addFavoritesArray))
-          swal("Good job!", "Products added successfully!", "success");
-        }
-        else{
-
-          const isExits = favoritesItems.find(phone => phone.id === id)
-
-          if(!isExits){
-            addFavoritesArray.push(...favoritesItems,phone)
-          localStorage.setItem('favorites',JSON.stringify(addFavoritesArray))
-          swal("Good job!", "Products added successfully!", "success");
-
-          }
-          else{
-
-
-            swal("error!", "No duplicate!", "error");
-          }
-
-          
-        }
-   
-    
-
-    }
-
-
     return (
-        <div className="flex justify-center items-center h-[80vh]">
+        <div>
+             <div className="flex justify-center items-center h-[80vh]">
             <div class="relative flex w-full max-w-[48rem] flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
             <div class="relative m-0 w-2/5 shrink-0 overflow-hidden rounded-xl rounded-r-none bg-white bg-clip-border text-gray-700">
              <img
@@ -87,6 +51,8 @@ const PhoneCard = ({phone}) => {
                 </div>
         </div>
     );
+        </div>
+    );
 };
 
-export default PhoneCard;
+export default FavoriteCard;

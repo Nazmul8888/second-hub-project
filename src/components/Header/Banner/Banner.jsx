@@ -1,9 +1,11 @@
 
 
+
 const Banner = () => {
     return (
-        <div className="h-[70vh] bg-green-500">
-            <h1>hello banner</h1>
+        <div className="h-[80vh] ">
+            <img src="https://i.ibb.co/CWCrP72/i-Phone-15-Pro-Lineup-Feature.jpg" alt="" />
+         
         </div>
     );
 };
